@@ -29,5 +29,5 @@ Extending the state machine by adding timer-based behaviour, integrating timing 
 
 ## 🖥️ HMI Screenshot
 
-```md
+
 ![HMI Screenshot](system.png)
