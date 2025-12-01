@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<baseline xmlns:xsd="http://www.nxtControl.com/Snapshot" xmlns="http://tempuri.org/XMLSchema1.xsd">
+  <snapshot guid="{C6142C4D-FD1C-4587-8344-B416303603E5}" compiler="Default" created="2023-10-13T18:20:45" base="{00000000-0000-0000-0000-000000000000}">
+    <DeployInformation Type="Working">
+      <FileGroup Name="FileList" xmlns="http://tempuri.org/DeploySnapshot.xsd">
+        <FileItem Name="Main#Button_LS_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>53C8B24CC0046039</Hash>
+        </FileItem>
+        <FileItem Name="Main#Button_LS.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>14AAFCFE2D6E6447</Hash>
+        </FileItem>
+        <FileItem Name="Main#DACylCtlBL.bin" Library="IEC61499.exe" BuildSnapshot="{C6142C4D-FD1C-4587-8344-B416303603E5}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T18:23:05</Modified>
+          <Hash>21558D7D777A261DE</Hash>
+        </FileItem>
+        <FileItem Name="Main#PULSE.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>206D0AEB0757AB624</Hash>
+        </FileItem>
+        <FileItem Name="Main#Button_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>158BD7146E8827CC0</Hash>
+        </FileItem>
+        <FileItem Name="Main#Button.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>2553AD4D04FF5EDD3</Hash>
+        </FileItem>
+        <FileItem Name="Main#ChangeDetect.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>209B78D6B227CF7AD</Hash>
+        </FileItem>
+        <FileItem Name="Main#ConvertToForce.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>3053A2D1FC5D2E4D</Hash>
+        </FileItem>
+        <FileItem Name="Main#integEC.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>47561EDC0E5331AC</Hash>
+        </FileItem>
+        <FileItem Name="Main#Cylinder_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>122FE84390ED809E9</Hash>
+        </FileItem>
+        <FileItem Name="Main#Cylinder.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>1979595757E11C94D</Hash>
+        </FileItem>
+        <FileItem Name="Main#Slider_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>4DA7FA9E5724E43</Hash>
+        </FileItem>
+        <FileItem Name="Main#Slider.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>125A38A791D647BCA</Hash>
+        </FileItem>
+        <FileItem Name="Main#InRange.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>326E860C0934176B</Hash>
+        </FileItem>
+        <FileItem Name="Main#Sensor_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>46B5EA46EDCB6E65</Hash>
+        </FileItem>
+        <FileItem Name="Main#Sensor.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>24702DF7E8AAD47EC</Hash>
+        </FileItem>
+        <FileItem Name="Main#CylinderSA.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>78422BBFA58DE1A6</Hash>
+        </FileItem>
+        <FileItem Name="Main#Valve_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>6493D32644E349FB</Hash>
+        </FileItem>
+        <FileItem Name="Main#ValveControl.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>1669740F32F7E836C</Hash>
+        </FileItem>
+        <FileItem Name="Main#MoveValve.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>255965EC5902EF23E</Hash>
+        </FileItem>
+        <FileItem Name="Main#Valve.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>237CA9F6332BB22AB</Hash>
+        </FileItem>
+        <FileItem Name="Main#CylinderLS.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>201E85480D2D3782D</Hash>
+        </FileItem>
+        <FileItem Name="Main#CylinderLS_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>571F19DBA2863537</Hash>
+        </FileItem>
+        <FileItem Name="Main#CylinderSA_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>139F4E40B384BB130</Hash>
+        </FileItem>
+        <LibraryItem Name="IEC61131.Standard" Version="22.1.0.3" />
+        <LibraryItem Name="Runtime.Base" Version="22.1.0.17" />
+        <LibraryItem Name="SE.DPAC" Version="22.1.0.24" />
+        <LibraryItem Name="SE.Standard" Version="22.1.0.9" />
+        <LibraryItem Name="Standard.HMIExtensions" Version="22.1.0.5" />
+        <DeviceItem ID="7b384acd-c823-42b0-8611-8a5f2d348303" Hash="1399CE3EF7163C682" />
+      </FileGroup>
+      <Device Name="DEV" ID="7b384acd-c823-42b0-8611-8a5f2d348303" xmlns="http://tempuri.org/DeploySnapshot.xsd">
+        <FileItem Name="Basics/SE.DPAC#DS_SELECTX_2536758B411A6CE51.bin" />
+        <FileItem Name="Composites/SE.DPAC#DPAC_FULLINIT.bin" />
+        <FileItem Name="Basics/Main#integEC.bin" />
+        <FileItem Name="Basics/Main#ChangeDetect.bin" />
+        <FileItem Name="HMIAccessors/Main#Cylinder_HMI.bin" />
+        <FileItem Name="Composites/Main#Cylinder.bin" />
+        <FileItem Name="HMIAccessors/Main#Slider_HMI.bin" />
+        <FileItem Name="Composites/Main#Slider.bin" />
+        <FileItem Name="Basics/Main#InRange.bin" />
+        <FileItem Name="HMIAccessors/Main#Sensor_HMI.bin" />
+        <FileItem Name="Composites/Main#Sensor.bin" />
+        <FileItem Name="Composites/Main#CylinderSA.bin" />
+        <FileItem Name="HMIAccessors/Main#Valve_HMI.bin" />
+        <FileItem Name="Basics/Main#ValveControl.bin" />
+        <FileItem Name="Basics/Main#MoveValve.bin" />
+        <FileItem Name="Composites/Main#Valve.bin" />
+        <FileItem Name="Composites/Main#CylinderLS.bin" />
+        <FileItem Name="Composites/Main#PULSE.bin" />
+        <FileItem Name="HMIAccessors/Main#Button_HMI.bin" />
+        <FileItem Name="Composites/Main#Button.bin" />
+        <FileItem Name="Basics/Main#DACylCtlBL.bin">
+          <Changed>true</Changed>
+        </FileItem>
+      </Device>
+    </DeployInformation>
+  </snapshot>
+  <snapshot guid="{01E063E6-B8F5-40E9-B8A6-1CEDB006EEC2}" compiler="Default" created="2023-10-13T18:31:45" base="{00000000-0000-0000-0000-000000000000}">
+    <DeployInformation Type="Working">
+      <FileGroup Name="FileList" xmlns="http://tempuri.org/DeploySnapshot.xsd">
+        <FileItem Name="Main#Button_LS_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>53C8B24CC0046039</Hash>
+        </FileItem>
+        <FileItem Name="Main#Button_LS.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>14AAFCFE2D6E6447</Hash>
+        </FileItem>
+        <FileItem Name="Main#DACylCtlBL.bin" Library="IEC61499.exe" BuildSnapshot="{45C8E55A-7ACD-489C-A6FD-8B9B6C559F39}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T18:30:40</Modified>
+          <Hash>394A4B2F10F99C1B</Hash>
+        </FileItem>
+        <FileItem Name="Main#PULSE.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>206D0AEB0757AB624</Hash>
+        </FileItem>
+        <FileItem Name="Main#Button_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>158BD7146E8827CC0</Hash>
+        </FileItem>
+        <FileItem Name="Main#Button.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>2553AD4D04FF5EDD3</Hash>
+        </FileItem>
+        <FileItem Name="Main#ChangeDetect.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>209B78D6B227CF7AD</Hash>
+        </FileItem>
+        <FileItem Name="Main#ConvertToForce.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>3053A2D1FC5D2E4D</Hash>
+        </FileItem>
+        <FileItem Name="Main#integEC.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>47561EDC0E5331AC</Hash>
+        </FileItem>
+        <FileItem Name="Main#Cylinder_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>122FE84390ED809E9</Hash>
+        </FileItem>
+        <FileItem Name="Main#Cylinder.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>1979595757E11C94D</Hash>
+        </FileItem>
+        <FileItem Name="Main#Slider_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>4DA7FA9E5724E43</Hash>
+        </FileItem>
+        <FileItem Name="Main#Slider.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>125A38A791D647BCA</Hash>
+        </FileItem>
+        <FileItem Name="Main#InRange.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>326E860C0934176B</Hash>
+        </FileItem>
+        <FileItem Name="Main#Sensor_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>46B5EA46EDCB6E65</Hash>
+        </FileItem>
+        <FileItem Name="Main#Sensor.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>24702DF7E8AAD47EC</Hash>
+        </FileItem>
+        <FileItem Name="Main#CylinderSA.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>78422BBFA58DE1A6</Hash>
+        </FileItem>
+        <FileItem Name="Main#Valve_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>6493D32644E349FB</Hash>
+        </FileItem>
+        <FileItem Name="Main#ValveControl.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>1669740F32F7E836C</Hash>
+        </FileItem>
+        <FileItem Name="Main#MoveValve.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>255965EC5902EF23E</Hash>
+        </FileItem>
+        <FileItem Name="Main#Valve.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>237CA9F6332BB22AB</Hash>
+        </FileItem>
+        <FileItem Name="Main#CylinderLS.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>201E85480D2D3782D</Hash>
+        </FileItem>
+        <FileItem Name="Main#CylinderLS_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>571F19DBA2863537</Hash>
+        </FileItem>
+        <FileItem Name="Main#CylinderSA_HMI.bin" Library="IEC61499.exe" BuildSnapshot="{74FEDEE7-128B-4815-8CEE-C8FF1EA88535}" BaseSnapshot="{00000000-0000-0000-0000-000000000000}">
+          <Modified>2023-10-13T13:36:20</Modified>
+          <Hash>139F4E40B384BB130</Hash>
+        </FileItem>
+        <LibraryItem Name="IEC61131.Standard" Version="22.1.0.3" />
+        <LibraryItem Name="Runtime.Base" Version="22.1.0.17" />
+        <LibraryItem Name="SE.DPAC" Version="22.1.0.24" />
+        <LibraryItem Name="SE.Standard" Version="22.1.0.9" />
+        <LibraryItem Name="Standard.HMIExtensions" Version="22.1.0.5" />
+        <DeviceItem ID="7b384acd-c823-42b0-8611-8a5f2d348303" Hash="1399CE3EF7163C682" />
+      </FileGroup>
+      <Device Name="DEV" ID="7b384acd-c823-42b0-8611-8a5f2d348303" xmlns="http://tempuri.org/DeploySnapshot.xsd">
+        <FileItem Name="Basics/SE.DPAC#DS_SELECTX_2536758B411A6CE51.bin" />
+        <FileItem Name="Composites/SE.DPAC#DPAC_FULLINIT.bin" />
+        <FileItem Name="Basics/Main#integEC.bin" />
+        <FileItem Name="Basics/Main#ChangeDetect.bin" />
+        <FileItem Name="HMIAccessors/Main#Cylinder_HMI.bin" />
+        <FileItem Name="Composites/Main#Cylinder.bin" />
+        <FileItem Name="HMIAccessors/Main#Slider_HMI.bin" />
+        <FileItem Name="Composites/Main#Slider.bin" />
+        <FileItem Name="Basics/Main#InRange.bin" />
+        <FileItem Name="HMIAccessors/Main#Sensor_HMI.bin" />
+        <FileItem Name="Composites/Main#Sensor.bin" />
+        <FileItem Name="Composites/Main#CylinderSA.bin" />
+        <FileItem Name="HMIAccessors/Main#Valve_HMI.bin" />
+        <FileItem Name="Basics/Main#ValveControl.bin" />
+        <FileItem Name="Basics/Main#MoveValve.bin" />
+        <FileItem Name="Composites/Main#Valve.bin" />
+        <FileItem Name="Composites/Main#CylinderLS.bin" />
+        <FileItem Name="Composites/Main#PULSE.bin" />
+        <FileItem Name="HMIAccessors/Main#Button_HMI.bin" />
+        <FileItem Name="Composites/Main#Button.bin" />
+        <FileItem Name="Basics/Main#DACylCtlBL.bin">
+          <Changed>true</Changed>
+        </FileItem>
+      </Device>
+    </DeployInformation>
+  </snapshot>
+  <deployment>
+    <network_profile name="(Default)">
+      <device id="7b384acd-c823-42b0-8611-8a5f2d348303" />
+    </network_profile>
+    <network_profile name="(Local Test)">
+      <device id="7b384acd-c823-42b0-8611-8a5f2d348303">
+        <sref snapshot="{01E063E6-B8F5-40E9-B8A6-1CEDB006EEC2}" state="ACTIVE_MODIFIED" />
+      </device>
+    </network_profile>
+  </deployment>
+</baseline>

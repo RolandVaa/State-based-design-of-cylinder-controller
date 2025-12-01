@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OPCUAComplexObjects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OPCUAComplexObject UID="A4ABD8400116F035" />
+  <OPCUAComplexObject UID="7b384acd-c823-42b0-8611-8a5f2d348303" />
+</OPCUAComplexObjects>

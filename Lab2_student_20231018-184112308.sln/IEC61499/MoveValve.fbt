@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="4cd72e96-e226-4d0d-8781-80a8c73d2de4" Name="MoveValve" Comment="Basic Function Block Type" Namespace="Main">
+  <Attribute Name="Configuration.FB.IDCounter" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmbH" Version="0.0" Author="Andrei" Date="5/27/2016" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request">
+        <With Var="CycleTime" />
+      </Event>
+      <Event Name="CT">
+        <With Var="FWD" />
+        <With Var="BKWD" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="ValvePosition" />
+      </Event>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="ValvePosition" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="FWD" Type="BOOL" Comment="Input event qualifier" />
+      <VarDeclaration Name="BKWD" Type="BOOL" />
+      <VarDeclaration Name="CycleTime" Type="REAL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="ValvePosition" Type="REAL" Comment="Output event qualifier" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="INIT,CT" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="552.9412" y="429.4117" />
+      <ECState Name="INIT" Comment="Initialization" x="923.5294" y="141.1765">
+        <ECAction Algorithm="INIT" Output="INITO" />
+      </ECState>
+      <ECState Name="CT" Comment="Normal execution" x="205.647" y="940.9412">
+        <ECAction Algorithm="CT" Output="CNF" />
+      </ECState>
+      <ECTransition Source="START" Destination="INIT" Condition="INIT" x="731.1476" y="204.8375" />
+      <ECTransition Source="INIT" Destination="START" Condition="1" x="797.5924" y="348.3232" />
+      <ECTransition Source="START" Destination="CT" Condition="CT" x="447.246" y="729.5165">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="126.4226,168.8054,102.8994,203.0357" />
+      </ECTransition>
+      <ECTransition Source="CT" Destination="START" Condition="1" x="372.718" y="610.1764">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="83.30529,163.2593,106.3418,129.3289" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="INIT" Comment="Initialization algorithm">
+      <ST Text="ValvePosition := 0.0;" />
+    </Algorithm>
+    <Algorithm Name="CT" Comment="Normally executed algorithm">
+      <ST Text="IF FWD AND NOT(BKWD) AND (ValvePosition + 200*CycleTime &lt; 43.0) THEN&#xD;&#xA;	ValvePosition := ValvePosition + 200*CycleTime;&#xD;&#xA;ELSIF FWD AND NOT(BKWD) AND (ValvePosition + 200*CycleTime &gt; 43.0) THEN&#xD;&#xA;	ValvePosition := 43.0;&#xD;&#xA;ELSIF NOT(FWD) AND BKWD AND (ValvePosition - 200*CycleTime &gt; 0.0) THEN&#xD;&#xA;	ValvePosition := ValvePosition - 200*CycleTime;&#xD;&#xA;ELSIF NOT(FWD) AND BKWD AND (ValvePosition - 200*CycleTime &lt; 0.0) THEN&#xD;&#xA;	ValvePosition := 0.0;&#xD;&#xA;ELSIF NOT(FWD) AND NOT(BKWD) THEN&#xD;&#xA;	ValvePosition := -1.0;&#xD;&#xA;ELSE&#xD;&#xA;	ValvePosition := ValvePosition;&#xD;&#xA;END_IF;&#xD;&#xA;" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

@@ -1,0 +1,10 @@
+<Mapping>
+  <EventInputs />
+  <EventOutputs>
+    <Event Name="CNF" Map="IND_1">Position</Event>
+  </EventOutputs>
+  <Inputs />
+  <Outputs>
+    <Output Name="Position" Type="REAL" Map="RD_1" />
+  </Outputs>
+</Mapping>

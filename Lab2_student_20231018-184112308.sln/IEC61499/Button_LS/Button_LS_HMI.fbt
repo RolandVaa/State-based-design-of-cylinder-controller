@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="a6725e89-a14d-47c8-89ff-1f894809365c" Name="Button_LS_HMI" Comment="Service Interface Function Block Type" Namespace="Main">
+  <Attribute Name="Runtime.Persistence.Storage" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmBH" Version="0.0" Author="Pranay Jhunjhunwala" Date="07/03/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event ID="A28FC52599195B05" Name="INIT">
+        <With Var="QI" />
+      </Event>
+      <Event ID="76C96A16316808F3" Name="REQ">
+        <With Var="Light" />
+      </Event>
+      <Event ID="C8047FACD12911FF" Name="E_Name">
+        <With Var="BName" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event ID="361FB73E210F3173" Name="INITO">
+        <With Var="QO" />
+        <With Var="STATUS" />
+      </Event>
+      <Event ID="104019E1FEA6BEA0" Name="CNF">
+        <With Var="Button" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration ID="D266690F89102B67" Name="QI" Type="BOOL" />
+      <VarDeclaration ID="48419E85C79BA1E0" Name="Light" Type="BOOL" />
+      <VarDeclaration ID="D96C27A2631E1B62" Name="BName" Type="STRING" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration ID="A45EA428BF8504FC" Name="QO" Type="BOOL" Comment="Event Output Qualifier" />
+      <VarDeclaration ID="7D18D93F614CB8F7" Name="STATUS" Type="STRING" Comment="Service Status" />
+      <VarDeclaration ID="B686FFB3A6F503EF" Name="Button" Type="BOOL" />
+    </OutputVars>
+  </InterfaceList>
+  <Service RightInterface="" LeftInterface="">
+    <ServiceSequence Name="" />
+  </Service>
+</FBType>

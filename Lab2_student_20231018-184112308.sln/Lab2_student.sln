@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+# SharpDevelop 5.2
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{EAD1E85F-CEF5-4861-AFF8-597F2DDE70FC}") = "IEC61499", "IEC61499\IEC61499.dfbproj", "{AE2A6AC9-499B-43B1-AE2C-DB5E034A65CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMI", "HMI\HMI.csproj", "{7F16CFB6-F79F-4C07-A5DA-66BEE597CCF5}"
+EndProject
+Project("{72AEB29F-A91B-8B3D-40ED-1C96841A14A3}") = "HwConfiguration", "HwConfiguration\HwConfiguration.hwconfigproj", "{8442CA57-E425-40E3-8339-BD2F698616BA}"
+EndProject
+Project("{E25C2A81-DD87-490C-A304-820B0BA163F2}") = "AssetLinkData", "AssetLinkData\AssetLinkData.assetLinkDataproj", "{CDECFD9B-F704-4497-B704-C89F489BBEDD}"
+EndProject
+Project("{B8625A29-8134-4135-BEBD-5371646CD051}") = "TopologyManager", "Topology\TopologyManager.topologyproj", "{F33ED36A-5700-4836-A999-B10882EFDC3D}"
+EndProject
+Project("{734B64AD-5918-4A98-921E-F30440701D97}") = "AvevaOMI", "AvevaOMI\AvevaOMI.omiproj", "{2100E323-A6DF-411C-A506-D6FB744CE43F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Windows = Debug|Windows
+		Release|Windows = Release|Windows
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE2A6AC9-499B-43B1-AE2C-DB5E034A65CC}.Debug|Windows.ActiveCfg = Debug|Windows
+		{AE2A6AC9-499B-43B1-AE2C-DB5E034A65CC}.Debug|Windows.Build.0 = Debug|Windows
+		{AE2A6AC9-499B-43B1-AE2C-DB5E034A65CC}.Release|Windows.ActiveCfg = Release|Windows
+		{AE2A6AC9-499B-43B1-AE2C-DB5E034A65CC}.Release|Windows.Build.0 = Release|Windows
+		{7F16CFB6-F79F-4C07-A5DA-66BEE597CCF5}.Debug|Windows.ActiveCfg = Debug|Windows
+		{7F16CFB6-F79F-4C07-A5DA-66BEE597CCF5}.Debug|Windows.Build.0 = Debug|Windows
+		{7F16CFB6-F79F-4C07-A5DA-66BEE597CCF5}.Release|Windows.ActiveCfg = Release|Windows
+		{7F16CFB6-F79F-4C07-A5DA-66BEE597CCF5}.Release|Windows.Build.0 = Release|Windows
+		{8442CA57-E425-40E3-8339-BD2F698616BA}.Debug|Windows.ActiveCfg = Debug|Windows
+		{8442CA57-E425-40E3-8339-BD2F698616BA}.Debug|Windows.Build.0 = Debug|Windows
+		{8442CA57-E425-40E3-8339-BD2F698616BA}.Release|Windows.ActiveCfg = Release|Windows
+		{8442CA57-E425-40E3-8339-BD2F698616BA}.Release|Windows.Build.0 = Release|Windows
+		{CDECFD9B-F704-4497-B704-C89F489BBEDD}.Debug|Windows.ActiveCfg = Debug|Windows
+		{CDECFD9B-F704-4497-B704-C89F489BBEDD}.Debug|Windows.Build.0 = Debug|Windows
+		{CDECFD9B-F704-4497-B704-C89F489BBEDD}.Release|Windows.ActiveCfg = Release|Windows
+		{CDECFD9B-F704-4497-B704-C89F489BBEDD}.Release|Windows.Build.0 = Release|Windows
+		{F33ED36A-5700-4836-A999-B10882EFDC3D}.Debug|Windows.ActiveCfg = Debug|Windows
+		{F33ED36A-5700-4836-A999-B10882EFDC3D}.Debug|Windows.Build.0 = Debug|Windows
+		{F33ED36A-5700-4836-A999-B10882EFDC3D}.Release|Windows.ActiveCfg = Release|Windows
+		{F33ED36A-5700-4836-A999-B10882EFDC3D}.Release|Windows.Build.0 = Release|Windows
+		{2100E323-A6DF-411C-A506-D6FB744CE43F}.Debug|Windows.ActiveCfg = Debug|Windows
+		{2100E323-A6DF-411C-A506-D6FB744CE43F}.Debug|Windows.Build.0 = Debug|Windows
+		{2100E323-A6DF-411C-A506-D6FB744CE43F}.Release|Windows.ActiveCfg = Release|Windows
+		{2100E323-A6DF-411C-A506-D6FB744CE43F}.Release|Windows.Build.0 = Release|Windows
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\IEC61499",
+    "\\IEC61499\\CylinderSA",
+    "\\IEC61499\\Sensor",
+    "\\IEC61499\\Slider",
+    "\\IEC61499\\SnapshotCompiles",
+    "\\IEC61499\\SnapshotCompiles\\{D409EE99-FCE1-4406-BF36-6462958A807D}",
+    "\\IEC61499\\SnapshotCompiles\\{D409EE99-FCE1-4406-BF36-6462958A807D}\\Default",
+    "\\IEC61499\\System",
+    "\\IEC61499\\Valve"
+  ],
+  "SelectedNode": "\\IEC61499\\SnapshotCompiles\\{D409EE99-FCE1-4406-BF36-6462958A807D}",
+  "PreviewInSolutionExplorer": false
+}

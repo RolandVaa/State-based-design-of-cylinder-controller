@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType Name="Slider" Comment="Composite Function Block Type" Namespace="Main">
+  <Attribute Name="Configuration.FB.IDCounter" Value="1" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmbH" Version="0.0" Author="Andrei" Date="5/26/2016" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request">
+        <With Var="QI" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="QO" />
+      </Event>
+      <Event Name="IND" Comment="Execution Confirmation">
+        <With Var="QO" />
+        <With Var="Position" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="QI" Type="BOOL" Comment="Input event qualifier" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QO" Type="BOOL" Comment="Output event qualifier" />
+      <VarDeclaration Name="Position" Type="REAL" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="IThis" Type="Slider_HMI" x="860" y="260" Namespace="Main" />
+    <Input Name="INIT">
+      <Position>
+        <X>25</X>
+        <Y>67.96354</Y>
+      </Position>
+      <IsType>Event</IsType>
+    </Input>
+    <Input Name="QI">
+      <Position>
+        <X>25</X>
+        <Y>132.963547</Y>
+      </Position>
+      <IsType>Data</IsType>
+    </Input>
+    <Output Name="INITO">
+      <Position>
+        <X>360</X>
+        <Y>67.96354</Y>
+      </Position>
+      <IsType>Event</IsType>
+    </Output>
+    <Output Name="IND">
+      <Position>
+        <X>360</X>
+        <Y>82.96355</Y>
+      </Position>
+      <IsType>Event</IsType>
+    </Output>
+    <Output Name="QO">
+      <Position>
+        <X>360</X>
+        <Y>132.963547</Y>
+      </Position>
+      <IsType>Data</IsType>
+    </Output>
+    <Output Name="Position">
+      <Position>
+        <X>360</X>
+        <Y>162.963547</Y>
+      </Position>
+      <IsType>Data</IsType>
+    </Output>
+    <EventConnections>
+      <Connection Source="INIT" Destination="IThis.INIT" dx1="40.83334" />
+      <Connection Source="IThis.INITO" Destination="INITO" dx1="40" />
+      <Connection Source="IThis.CNF" Destination="IND" dx1="40" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="QI" Destination="IThis.QI" dx1="40" />
+      <Connection Source="IThis.QO" Destination="QO" dx1="40" />
+      <Connection Source="IThis.Position" Destination="Position" dx1="40" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

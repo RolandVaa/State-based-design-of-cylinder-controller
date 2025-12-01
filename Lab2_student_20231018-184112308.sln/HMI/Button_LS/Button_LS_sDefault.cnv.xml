@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+  <EventInputs>
+    <Event Name="REQ">Light</Event>
+    <Event Name="E_Name">BName</Event>
+  </EventInputs>
+  <EventOutputs>
+    <Event Name="CNF">Button</Event>
+  </EventOutputs>
+  <Inputs>
+    <Input Name="Light" Type="BOOL" />
+    <Input Name="BName" Type="STRING" />
+  </Inputs>
+  <Outputs>
+    <Output Name="Button" Type="BOOL" />
+  </Outputs>
+</Mapping>

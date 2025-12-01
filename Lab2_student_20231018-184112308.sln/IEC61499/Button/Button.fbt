@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="86891cc9-217f-43d7-91a3-480408149f28" Name="Button" Comment="Composite Function Block Type" Namespace="Main">
+  <Attribute Name="Configuration.FB.IDCounter" Value="3" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmbH" Version="0.0" Author="Andrei" Date="5/25/2016" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request">
+        <With Var="LABEL" />
+      </Event>
+      <Event Name="REQ">
+        <With Var="Light" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="VAL" />
+      </Event>
+      <Event Name="IND" Comment="Execution Confirmation">
+        <With Var="VAL" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="LABEL" Type="STRING" />
+      <VarDeclaration Name="Light" Type="BOOL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="VAL" Type="BOOL" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="2" Name="FB1" Type="PULSE" x="2140" y="700" Namespace="Main">
+      <Parameter Name="DTC" Value="t#100ms" />
+    </FB>
+    <FB ID="1" Name="IThis" Type="Button_HMI" x="860" y="220" Namespace="Main">
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <FB ID="3" Name="FB2" Type="E_MERGE" x="2620" y="520" Namespace="IEC61499.Standard" />
+    <Input Name="INIT" x="20" y="231.8542" Type="Event" />
+    <Input Name="LABEL" x="20" y="551.8542" Type="Data" />
+    <Input Name="Light" x="120" y="752" Type="Data" />
+    <Input Name="REQ" x="100" y="372" Type="Event" />
+    <Output Name="INITO" x="1700" y="231.8542" Type="Event" />
+    <Output Name="IND" x="3020" y="531.8542" Type="Event" />
+    <Output Name="VAL" x="2600" y="911.8542" Type="Data" />
+    <EventConnections>
+      <Connection Source="FB1.CNF" Destination="FB2.EI2" dx1="49.8125" />
+      <Connection Source="FB2.EO" Destination="IND" dx1="41.54175" />
+      <Connection Source="INIT" Destination="IThis.INIT" dx1="41.41669" />
+      <Connection Source="INIT" Destination="IThis.REQ" dx1="41.41669" />
+      <Connection Source="REQ" Destination="IThis.E_Light" dx1="49.54169" />
+      <Connection Source="IThis.INITO" Destination="INITO" dx1="40" />
+      <Connection Source="IThis.CNF" Destination="FB2.EI1" dx1="723.3125">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="IThis.CNF" Destination="FB1.REQ" dx1="723.3125">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="FB1.RES" Destination="VAL" dx1="49.8125" />
+      <Connection Source="LABEL" Destination="IThis.LABEL" dx1="44.79169" />
+      <Connection Source="Light" Destination="IThis.Light" dx1="47.47919" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

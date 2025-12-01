@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Lab2_student" Guid="{AE2A6AC9-499B-43B1-AE2C-DB5E034A65CC}" Version="1.5.0.0" xmlns="http://www.nxtcontrol.com/IEC61499.xsd">
+  <Archive>
+    <ExcludeDir>
+      <string>Exports</string>
+      <string>Imports</string>
+      <string>Documentation</string>
+    </ExcludeDir>
+  </Archive>
+  <References />
+  <CanvasResolution StartCanvasClass="HMI.Main.Canvases.StartCanvas_2" Width="800" Height="600" WorkAreaWidth="800" WorkAreaHeight="520" Template="Default" Login="true" NavigationControl="0" CurrentUser="true" LanguageButton="true" RuntimeConnection="true" Logger="false" NavigationBar="true" NewVersionDeployed="true" Exit="false" ShowWarningMessage="false" WarningText="" SiblingButtonCount="5" ChildButtonCount="5" IsCanvasTopologyPanel="true" ResizeBehaviour="None">
+    <Topology Name="Default">
+      <Canvases>
+        <Canvas Name="Canvas1" Title="" Tooltip="" Instance="HMI.Main.Canvases.Canvas1" />
+      </Canvases>
+    </Topology>
+  </CanvasResolution>
+  <CanvasResolution StartCanvasClass="" Width="-1" Height="-1" WorkAreaWidth="-1" WorkAreaHeight="-1" Template="" Login="true" NavigationControl="0" CurrentUser="true" LanguageButton="true" RuntimeConnection="true" Logger="false" NavigationBar="true" NewVersionDeployed="true" Exit="false" ShowWarningMessage="false" WarningText="" SiblingButtonCount="5" ChildButtonCount="5" IsCanvasTopologyPanel="true" ResizeBehaviour="None">
+    <Topology Name="Default" />
+  </CanvasResolution>
+  <Graphics Name="Graphics" IsExternal="false" />
+  <WebGraphics Name="WebGraphics" IsExternal="false" />
+  <Security Level="Internal" IsActive="true">
+    <Info>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;UserManager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" HighestID="3"&gt;&lt;UserInfos Name="TEST" Password="$1$EE16FCFAB7E70C2BBE32CD1A054CEB4547F1764B3B8713D487CDEFA74C9CA19E$5A16D0AC6B937479E973DD0720246A2E4603B17D132CE73255E62FCA072A07BC" SecurityToken="127" ID="1" MeetsCalLaw="true" /&gt;&lt;UserInfos Name="roland" Password="$1$0B7579A501A93521018C22844A5657E89CC06DA8480F2EAEB93B49C666D26056$4D67B9961AF7A9898712CE7CF7BEA29D51D2D4FD5500E4CCB915B770230DAE06" SecurityToken="127" ID="2" MeetsCalLaw="true" /&gt;&lt;/UserManager&gt;</Info>
+  </Security>
+  <PluginGUIDs />
+</ProjectDatabase>

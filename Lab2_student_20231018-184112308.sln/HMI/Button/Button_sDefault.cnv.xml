@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+  <EventInputs>
+    <Event Name="REQ">LABEL;ENABLE</Event>
+    <Event Name="E_Light">Light</Event>
+  </EventInputs>
+  <EventOutputs>
+    <Event Name="CNF" />
+  </EventOutputs>
+  <Inputs>
+    <Input Name="LABEL" Type="STRING" />
+    <Input Name="ENABLE" Type="BOOL" />
+    <Input Name="Light" Type="BOOL" />
+  </Inputs>
+  <Outputs />
+</Mapping>

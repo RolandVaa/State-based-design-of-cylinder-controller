@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="8ed0f27c-80cd-4b5e-8a83-b5083c1067b8" Name="Button_LS" Comment="Composite Function Block Type" Namespace="Main">
+  <Attribute Name="HMI.Alias" Value="" />
+  <Attribute Name="Configuration.FB.IDCounter" Value="1" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmBH" Version="0.0" Author="Pranay Jhunjhunwala" Date="07/03/2023" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request">
+        <With Var="BName" />
+        <With Var="Light" />
+      </Event>
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="Light" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="QO" />
+      </Event>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="QO" />
+        <With Var="Button" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="Light" Type="BOOL" />
+      <VarDeclaration Name="BName" Type="STRING" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="QO" Type="BOOL" Comment="Output event qualifier" />
+      <VarDeclaration Name="Button" Type="BOOL" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="IThis" Type="Button_LS_HMI" x="980" y="300" Namespace="Main">
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <Input Name="INIT" x="480" y="312" Type="Event" />
+    <Input Name="REQ" x="480" y="372" Type="Event" />
+    <Input Name="Light" x="80" y="672" Type="Data" />
+    <Input Name="BName" x="112.6771" y="772" Type="Data" />
+    <Output Name="INITO" x="2118.229" y="12" Type="Event" />
+    <Output Name="CNF" x="2144.313" y="72" Type="Event" />
+    <Output Name="QO" x="2023.875" y="132" Type="Data" />
+    <Output Name="Button" x="2016.729" y="192" Type="Data" />
+    <EventConnections>
+      <Connection Source="INIT" Destination="IThis.INIT" />
+      <Connection Source="REQ" Destination="IThis.REQ" />
+      <Connection Source="INIT" Destination="IThis.E_Name" dx1="41.41669" />
+      <Connection Source="IThis.INITO" Destination="INITO" dx1="40" />
+      <Connection Source="IThis.CNF" Destination="CNF" dx1="75.875" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="Light" Destination="IThis.Light" dx1="47.47919" />
+      <Connection Source="BName" Destination="IThis.BName" dx1="42.67712" />
+      <Connection Source="IThis.Button" Destination="Button" dx1="95.875" />
+    </DataConnections>
+  </FBNetwork>
+</FBType>

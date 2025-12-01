@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="05ab2783-ba20-4c02-b395-b318eb6baceb" Name="DACylCtlST" Comment="Basic Function Block Type" Namespace="Main">
+  <Attribute Name="Configuration.FB.IDCounter" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmbH" Version="0.0" Author="Andrei" Date="5/26/2016" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request">
+        <With Var="HOME" />
+        <With Var="END" />
+        <With Var="START" />
+        <With Var="INTERGER" />
+      </Event>
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="HOME" />
+        <With Var="END" />
+        <With Var="START" />
+        <With Var="INTERGER" />
+      </Event>
+      <Event Name="TINEVENT" />
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="FWD" />
+        <With Var="RETR" />
+        <With Var="LED" />
+        <With Var="S1" />
+        <With Var="S2" />
+        <With Var="S3" />
+        <With Var="S0" />
+      </Event>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="FWD" />
+        <With Var="RETR" />
+        <With Var="LED" />
+        <With Var="S1" />
+        <With Var="S2" />
+        <With Var="S3" />
+        <With Var="S0" />
+      </Event>
+      <Event Name="TEVENT">
+        <With Var="S1" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="HOME" Type="BOOL" Comment="Input event qualifier" />
+      <VarDeclaration Name="END" Type="BOOL" />
+      <VarDeclaration Name="START" Type="BOOL" />
+      <VarDeclaration Name="INTERGER" Type="INT" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="FWD" Type="BOOL" />
+      <VarDeclaration Name="RETR" Type="BOOL" />
+      <VarDeclaration Name="LED" Type="BOOL" />
+      <VarDeclaration Name="S1" Type="BOOL" />
+      <VarDeclaration Name="S2" Type="BOOL" />
+      <VarDeclaration Name="S3" Type="BOOL" />
+      <VarDeclaration Name="S0" Type="BOOL" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="INIT,BOOLEAN,Sx,IFTHENELSE,Newstate,Blinking" />
+    <InternalVars>
+      <VarDeclaration Name="State" Type="INT" />
+      <VarDeclaration Name="S1x" Type="BOOL" />
+      <VarDeclaration Name="S2x" Type="BOOL" />
+      <VarDeclaration Name="S3x" Type="BOOL" />
+      <VarDeclaration Name="S0x" Type="BOOL" />
+      <VarDeclaration Name="T1" Type="INT" />
+      <VarDeclaration Name="T2" Type="INT" />
+    </InternalVars>
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="468.9412" y="557.4117" />
+      <ECState Name="REQ" x="1440" y="904.0001" />
+      <ECState Name="INIT" x="627.9999" y="200">
+        <ECAction Algorithm="INIT" Output="INITO" />
+      </ECState>
+      <ECState Name="STATE1" x="1764" y="280">
+        <ECAction Algorithm="Sx" Output="CNF" />
+      </ECState>
+      <ECState Name="STATE2" x="1956" y="1332">
+        <ECAction Algorithm="BOOLEAN" Output="CNF" />
+      </ECState>
+      <ECState Name="STATE3" x="3236" y="1468">
+        <ECAction Algorithm="Newstate" Output="CNF" />
+      </ECState>
+      <ECState Name="STATE4" x="3204" y="704">
+        <ECAction Algorithm="IFTHENELSE" Output="CNF" />
+      </ECState>
+      <ECState Name="STATE5" x="2656" y="108">
+        <ECAction Output="CNF" />
+      </ECState>
+      <ECTransition Source="START" Destination="INIT" Condition="INIT&#xD;&#xA;" x="473.7015" y="348.3165">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="111.2679,94.23969,120.1449,74.85365" />
+      </ECTransition>
+      <ECTransition Source="START" Destination="REQ" Condition="REQ" x="999.2798" y="663.3566">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="219.4199,150.1062,283.2672,173.5609" />
+      </ECTransition>
+      <ECTransition Source="INIT" Destination="START" Condition="1" x="628.4677" y="409.1997">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="164.6502,94.29745,155.2657,115.3847" />
+      </ECTransition>
+      <ECTransition Source="REQ" Destination="STATE1" Condition="INTERGER = 0" x="1609.035" y="492.8527">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="391.5842,137.431,417.1671,92.47083" />
+      </ECTransition>
+      <ECTransition Source="REQ" Destination="STATE2" Condition="INTERGER = 1" x="1776.424" y="1101.158">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="433.2549,260.8139,462.2598,287.3548" />
+      </ECTransition>
+      <ECTransition Source="STATE2" Destination="START" Condition="1" x="1203.813" y="1020.306">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="356.7301,289.1024,249.5052,233.2505" />
+      </ECTransition>
+      <ECTransition Source="STATE1" Destination="START" Condition="1" x="1132.771" y="496.447">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="327.738,119.0723,240.6165,137.8876" />
+      </ECTransition>
+      <ECTransition Source="REQ" Destination="STATE3" Condition="INTERGER = 2" x="2361.75" y="1129.065">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="527.6268,258.1183,658.6053,299.6801" />
+      </ECTransition>
+      <ECTransition Source="STATE3" Destination="START" Condition="1" x="1728.269" y="1509.412">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="565.4011,311.8361,288,524" />
+      </ECTransition>
+      <ECTransition Source="REQ" Destination="STATE4" Condition="INTERGER = 3" x="2328.572" y="822.8026">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="521.088,213.8562,647.8751,199.4813" />
+      </ECTransition>
+      <ECTransition Source="STATE4" Destination="START" Condition="1" x="2695.146" y="2078.722">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="1555.013,870.9999,-66,401" />
+      </ECTransition>
+      <ECTransition Source="STATE5" Destination="STATE1" Condition="T2.Q" x="2019.446" y="117.2681">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="446,-30,531.9641,77.92029" />
+      </ECTransition>
+      <ECTransition Source="STATE1" Destination="STATE5" Condition="T1.Q" x="2350.893" y="357.2312">
+        <Attribute Name="Configuration.Transaction.BezierPoints" Value="626,184,577.7693,18.62744" />
+      </ECTransition>
+    </ECC>
+    <Algorithm Name="INIT" Comment="Initialization algorithm">
+      <ST Text="FWD :=FALSE;&#xD;&#xA;RETR:=FALSE;&#xD;&#xA;LED :=FALSE;&#xD;&#xA;IF INTERGER &gt;1 THEN&#xD;&#xA;	S0 := TRUE;&#xD;&#xA;	S1 := FALSE;&#xD;&#xA;	S2 := FALSE;&#xD;&#xA;	S3 := FALSE;&#xD;&#xA;ELSE;&#xD;&#xA;	S1 := TRUE;&#xD;&#xA;	S2 := FALSE;&#xD;&#xA;	S3 := FALSE;&#xD;&#xA;END_IF;" />
+    </Algorithm>
+    <Algorithm Name="Sx">
+      <ST Text="S1x := 1;&#xD;&#xA;S2x := 0;&#xD;&#xA;S3x := 0;&#xD;&#xA;S2x := S2 AND NOT END OR S1 AND START;&#xD;&#xA;S3x := S3 AND NOT HOME OR S2 AND END; &#xD;&#xA;S1x := S1 AND NOT START OR S3 AND HOME;&#xD;&#xA;// Outputs&#xD;&#xA;LED := S1x;&#xD;&#xA;FWD := S2x;&#xD;&#xA;RETR := S3x;&#xD;&#xA;S1 := S1x;&#xD;&#xA;S2 := S2x;&#xD;&#xA;S3 := S3x;&#xD;&#xA;" />
+    </Algorithm>
+    <Algorithm Name="BOOLEAN">
+      <ST Text="S2:=S2 AND NOT END OR S1 AND START;&#xD;&#xA;S3:=S3 AND NOT HOME OR S2 AND END;&#xD;&#xA;S1:=S1 AND NOT START OR S3 AND HOME;&#xD;&#xA;&#xD;&#xA;// Outputs&#xD;&#xA;LED := S1;&#xD;&#xA;FWD := S2;&#xD;&#xA;RETR := S3;" />
+    </Algorithm>
+    <Algorithm Name="IFTHENELSE">
+      <ST Text=";&#xD;&#xA;&#xD;&#xA;IF State=0 THEN&#xD;&#xA;	LED:=FALSE;&#xD;&#xA;	IF HOME THEN&#xD;&#xA;		State:=1;&#xD;&#xA;	END_IF;&#xD;&#xA;ELSIF State = 1 THEN&#xD;&#xA;	RETR:= FALSE;&#xD;&#xA;	LED:=TRUE;&#xD;&#xA;	IF START THEN&#xD;&#xA;		State:=2;&#xD;&#xA;	END_IF;&#xD;&#xA;ELSIF State=2 THEN&#xD;&#xA;	FWD:=TRUE;&#xD;&#xA;	IF END THEN&#xD;&#xA;		State:=3;&#xD;&#xA;	END_IF;&#xD;&#xA;ELSIF State=3 THEN&#xD;&#xA;	RETR := TRUE;&#xD;&#xA;	FWD := FALSE;&#xD;&#xA;	RETR:=TRUE;&#xD;&#xA;	IF HOME THEN&#xD;&#xA;		State:=1;&#xD;&#xA;	END_IF;&#xD;&#xA;END_IF;&#xD;&#xA;" />
+    </Algorithm>
+    <Algorithm Name="Newstate">
+      <ST Text=";&#xD;&#xA;&#xD;&#xA;	S2x := S2 AND NOT END OR S1 AND START;&#xD;&#xA;	S3x := S3 AND NOT HOME OR S2 AND END; &#xD;&#xA;	S1x := S1 AND NOT START OR S3 AND HOME OR S0 AND HOME;&#xD;&#xA;	S0x := S0 AND NOT HOME;&#xD;&#xA;&#xD;&#xA;	LED := S1x;&#xD;&#xA;	FWD := S2x;&#xD;&#xA;	RETR := S3x;&#xD;&#xA;	S0 := S0x;&#xD;&#xA;	S1 := S1x;&#xD;&#xA;	S2 := S2x;&#xD;&#xA;	S3 := S3x;" />
+    </Algorithm>
+    <Algorithm Name="Blinking">
+      <ST Text=";" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="633c7520-62c9-4bc8-b82f-44abf4aa6120" Name="ValveControl" Comment="Basic Function Block Type" Namespace="Main">
+  <Attribute Name="Configuration.FB.IDCounter" Value="0" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmbH" Version="0.0" Author="Horst Mayer" Date="9/14/2008" Remarks="Template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request">
+        <With Var="ValvePosition" />
+      </Event>
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="ValvePosition" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="valvePUSH" />
+        <With Var="valvePOP" />
+      </Event>
+      <Event Name="CNF" Comment="Execution Confirmation">
+        <With Var="valvePUSH" />
+        <With Var="valvePOP" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="ValvePosition" Type="REAL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="valvePUSH" Type="REAL" />
+      <VarDeclaration Name="valvePOP" Type="REAL" />
+    </OutputVars>
+  </InterfaceList>
+  <BasicFB>
+    <Attribute Name="FBType.Basic.Algorithm.Order" Value="INIT,REQ" />
+    <ECC>
+      <ECState Name="START" Comment="Initial State" x="552.9412" y="429.4117" />
+      <ECState Name="INIT" Comment="Initialization" x="923.5294" y="141.1765">
+        <ECAction Algorithm="INIT" Output="INITO" />
+      </ECState>
+      <ECState Name="REQ" Comment="Normal execution" x="217.647" y="752.9412">
+        <ECAction Algorithm="REQ" Output="CNF" />
+      </ECState>
+      <ECTransition Source="START" Destination="INIT" Condition="INIT" x="731.1476" y="204.8375" />
+      <ECTransition Source="INIT" Destination="START" Condition="1" x="797.5924" y="348.3232" />
+      <ECTransition Source="START" Destination="REQ" Condition="REQ" x="447.8488" y="648.3352" />
+      <ECTransition Source="REQ" Destination="START" Condition="1" x="372.8767" y="512.7991" />
+    </ECC>
+    <Algorithm Name="INIT" Comment="Initialization algorithm">
+      <ST Text="valvePOP := 0.0;&#xD;&#xA;valvePUSH := 0.0;&#xD;&#xA;" />
+    </Algorithm>
+    <Algorithm Name="REQ" Comment="Normally executed algorithm">
+      <ST Text="IF ValvePosition &gt; 40 THEN&#xD;&#xA;	valvePUSH := 200.0;&#xD;&#xA;	valvePOP := 0.0;&#xD;&#xA;ELSIF ValvePosition &lt; 3 AND ValvePosition &gt;=-0.5 THEN&#xD;&#xA;	valvePUSH := 0.0;&#xD;&#xA;	valvePOP := 200.0;&#xD;&#xA;ELSIF ValvePosition = -1.0 THEN&#xD;&#xA;	valvePUSH := 0.0;&#xD;&#xA;	valvePOP := 0.0;&#xD;&#xA;ELSE&#xD;&#xA;	valvePUSH := 0.0;&#xD;&#xA;	valvePOP := 0.0;&#xD;&#xA;END_IF;&#xD;&#xA;" />
+    </Algorithm>
+  </BasicFB>
+</FBType>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType GUID="eff752df-b4da-492e-a4a7-fcfc8e6a1195" Name="Valve" Comment="Composite Function Block Type" Namespace="Main">
+  <Attribute Name="Configuration.FB.IDCounter" Value="7" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmbH" Version="0.0" Author="Andrei" Date="5/26/2016" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Comment="Initialization Request" />
+      <Event Name="REQ">
+        <With Var="FWD" />
+        <With Var="BKWD" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INITO" Comment="Initialization Confirm">
+        <With Var="ValvePush" />
+        <With Var="ValvePop" />
+      </Event>
+      <Event Name="CNF">
+        <With Var="ValvePush" />
+        <With Var="ValvePop" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="FWD" Type="BOOL" Comment="Input event qualifier" />
+      <VarDeclaration Name="BKWD" Type="BOOL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="ValvePush" Type="REAL" />
+      <VarDeclaration Name="ValvePop" Type="REAL" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="IThis" Type="Valve_HMI" x="2920" y="220" Namespace="Main">
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <FB ID="6" Name="FB3" Type="E_CYCLE" x="580" y="1540" Namespace="IEC61499.Standard">
+      <Parameter Name="DT" Value="t#20ms" />
+    </FB>
+    <FB ID="2" Name="FB1" Type="ValveControl" x="2840" y="960" Namespace="Main" />
+    <FB ID="5" Name="FB2" Type="MoveValve" x="1360" y="960" Namespace="Main">
+      <Parameter Name="CycleTime" Value="0.02" />
+    </FB>
+    <FB ID="7" Name="FB4" Type="ChangeDetect" x="2100" y="1020" Namespace="Main" />
+    <Input Name="INIT" x="580" y="971.8542" Type="Event" />
+    <Input Name="FWD" x="580" y="1231.854" Type="Data" />
+    <Input Name="BKWD" x="580" y="1291.854" Type="Data" />
+    <Input Name="REQ" x="2020" y="731.8542" Type="Event" />
+    <Output Name="INITO" x="3720" y="971.8542" Type="Event" />
+    <Output Name="ValvePop" x="3720" y="1291.854" Type="Data" />
+    <Output Name="ValvePush" x="3720" y="1231.854" Type="Data" />
+    <Output Name="CNF" x="3720" y="1031.854" Type="Event" />
+    <EventConnections>
+      <Connection Source="FB1.CNF" Destination="CNF" dx1="40" />
+      <Connection Source="INIT" Destination="FB2.INIT" dx1="41.41669">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.INITO" Destination="INITO" dx1="40" />
+      <Connection Source="FB3.EO" Destination="FB2.CT" dx1="258.5">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.INITO" Destination="FB3.START" dx1="99.99976" dx2="100" dy="1062">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="REQ" Destination="FB1.REQ" dx1="218.9583">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB2.CNF" Destination="FB4.REQ" />
+      <Connection Source="FB4.CHG" Destination="FB1.REQ" />
+      <Connection Source="FB2.INITO" Destination="IThis.INIT" dx1="618.729">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB4.CHG" Destination="IThis.IND" dx1="207.2292">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="IThis.INITO" Destination="FB1.INIT" dx1="49.396" dx2="50" dy="410" />
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="FB1.valvePUSH" Destination="ValvePush" dx1="40" />
+      <Connection Source="FB1.valvePOP" Destination="ValvePop" dx1="40" />
+      <Connection Source="BKWD" Destination="FB2.BKWD" dx1="40" />
+      <Connection Source="FWD" Destination="FB2.FWD" dx1="42.52081" />
+      <Connection Source="FB2.ValvePosition" Destination="FB4.INP" />
+      <Connection Source="FB4.OUT" Destination="FB1.ValvePosition" />
+      <Connection Source="FB4.OUT" Destination="IThis.Position" dx1="287.2292">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+    </DataConnections>
+  </FBNetwork>
+</FBType>

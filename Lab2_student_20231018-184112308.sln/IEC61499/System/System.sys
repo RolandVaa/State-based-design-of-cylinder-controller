@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE System SYSTEM "../LibraryElement.dtd">
+<System Name="System" Comment="System Configuration">
+  <Attribute Name="System.Device.FolderPath" Value="DEV" />
+  <Identification Standard="61499-1" />
+  <VersionInfo Organization="nxtControl GmbH" Version="0.0" Author="Andrei" Date="5/25/2016" />
+  <Application ID="A4ABD8400116F035" Name="APP1">
+    <SubAppNetwork>
+      <FB ID="E913E95C786BE958" Name="Plant" Type="CylinderLS" x="2140" y="520" Namespace="Main">
+        <Parameter Name="startPosition" Value="115.0" />
+      </FB>
+      <FB ID="8CC299D07EC1C5D" Name="Controller" Type="DACylCtlBL" x="1380" y="520" Namespace="Main" />
+      <FB ID="DAABAB487AE921AB" Name="Scan" Type="E_CYCLE" x="720" y="580" Namespace="IEC61499.Standard">
+        <Parameter Name="DT" Value="T#200ms" />
+      </FB>
+      <FB ID="FBA4476D07CBCE68" Name="BT" Type="Button" x="720" y="1120" Namespace="Main">
+        <Parameter Name="LABEL" Value="'START'" />
+      </FB>
+      <FB ID="3D17D5D7FCEAAE37" Name="FB2" Type="DACylCtlST" x="1700" y="1900" Namespace="Main" />
+      <FB ID="BE1FF208AD293639" Name="FB1" Type="E_DELAY" x="3040" y="2060" Namespace="IEC61499.Standard" />
+      <EventConnections>
+        <Connection Source="Plant.INITO" Destination="BT.INIT" dx1="110.9583" dx2="300" dy="1020">
+          <AvoidsNodes>false</AvoidsNodes>
+        </Connection>
+        <Connection Source="Controller.INITO" Destination="Scan.START" dx1="40" dx2="50" dy="-120">
+          <AvoidsNodes>false</AvoidsNodes>
+        </Connection>
+        <Connection Source="Scan.EO" Destination="Controller.REQ" />
+        <Connection Source="BT.INITO" Destination="Controller.INIT" dx1="53.39587">
+          <AvoidsNodes>false</AvoidsNodes>
+        </Connection>
+        <Connection Source="Controller.CNF" Destination="Plant.REQ" />
+        <Connection Source="Plant.CNF" Destination="BT.REQ" dx1="150.9583" dx2="380" dy="1060">
+          <AvoidsNodes>false</AvoidsNodes>
+        </Connection>
+        <Connection Source="BT.IND" Destination="Controller.REQ" dx1="113.3959">
+          <AvoidsNodes>false</AvoidsNodes>
+        </Connection>
+        <Connection Source="Controller.CNF" Destination="BT.REQ" dx1="144" dx2="440" dy="1120">
+          <AvoidsNodes>false</AvoidsNodes>
+        </Connection>
+        <Connection Source="FB2.TEVENT" Destination="FB1.START" dx1="41.229" />
+        <Connection Source="FB1.EO" Destination="FB2.TINEVENT" dx1="48.5" dx2="30" dy="-270" />
+      </EventConnections>
+      <DataConnections>
+        <Connection Source="Controller.FWD" Destination="Plant.Extend" />
+        <Connection Source="Controller.RETR" Destination="Plant.Retract" />
+        <Connection Source="Plant.End" Destination="Controller.END" dx1="40.9585" dx2="30" dy="390" />
+        <Connection Source="Plant.Start" Destination="Controller.HOME" dx1="70.9585" dx2="60" dy="320">
+          <AvoidsNodes>false</AvoidsNodes>
+        </Connection>
+        <Connection Source="BT.VAL" Destination="Controller.START" dx1="153.3959">
+          <AvoidsNodes>false</AvoidsNodes>
+        </Connection>
+        <Connection Source="Controller.LED" Destination="BT.Light" dx1="84" dx2="120" dy="700">
+          <AvoidsNodes>false</AvoidsNodes>
+        </Connection>
+      </DataConnections>
+    </SubAppNetwork>
+  </Application>
+  <Device ID="7b384acd-c823-42b0-8611-8a5f2d348303" Name="DEV" Type="Soft_dPAC" x="534.6564" y="1371.854" Namespace="SE.DPAC">
+    <Resource ID="1539D13741BA6099" Name="RES0" Type="EMB_RES_ECO" Namespace="Runtime.Management">
+      <FBNetwork>
+        <FB ID="3130B37F17352CE" Name="FB1" Type="DPAC_FULLINIT" x="780" y="80" Namespace="SE.DPAC" Loaded="true" />
+        <FB ID="CE9E5732C8BFF72D" Name="Scan" Type="E_CYCLE" x="720" y="580" Namespace="IEC61499.Standard" />
+        <FB ID="A2453966B6757AA2" Name="Plant" Type="CylinderLS" x="2140" y="520" Namespace="Main">
+          <Parameter Name="startPosition" Value="115.0" />
+        </FB>
+        <FB ID="604D7587A9407C72" Name="BT" Type="Button" x="720" y="1120" Namespace="Main">
+          <Parameter Name="LABEL" Value="'START'" />
+        </FB>
+        <FB ID="B3E46008DDA0F98C" Name="Controller" Type="DACylCtlBL" x="1380" y="520" Namespace="Main" />
+        <FB ID="52B23EFADD99CC64" Name="Scan0" Type="E_CYCLE" x="720" y="580" Namespace="IEC61499.Standard">
+          <Parameter Name="DT" Value="T#200ms" />
+        </FB>
+        <EventConnections>
+          <Connection Source="START.WARM" Destination="FB1.INIT" dx1="70" />
+          <Connection Source="START.COLD" Destination="FB1.INIT" dx1="50" />
+          <Connection Source="START.ONLINECHANGE" Destination="FB1.OC_RETRIGGER" dx1="90" />
+          <Connection Source="Controller.CNF" Destination="Plant.REQ" />
+          <Connection Source="Controller.INITO" Destination="Scan0.START" dx1="40" dx2="50" dy="-120">
+            <AvoidsNodes>false</AvoidsNodes>
+          </Connection>
+          <Connection Source="Scan0.EO" Destination="Controller.REQ" />
+          <Connection Source="Plant.INITO" Destination="BT.INIT" dx1="110.9583" dx2="300" dy="1020">
+            <AvoidsNodes>false</AvoidsNodes>
+          </Connection>
+          <Connection Source="BT.INITO" Destination="Controller.INIT" dx1="53.39587">
+            <AvoidsNodes>false</AvoidsNodes>
+          </Connection>
+          <Connection Source="Plant.CNF" Destination="BT.REQ" dx1="150.9583" dx2="380" dy="1060">
+            <AvoidsNodes>false</AvoidsNodes>
+          </Connection>
+          <Connection Source="BT.IND" Destination="Controller.REQ" dx1="113.3959">
+            <AvoidsNodes>false</AvoidsNodes>
+          </Connection>
+          <Connection Source="Controller.CNF" Destination="BT.REQ" dx1="144" dx2="440" dy="1120">
+            <AvoidsNodes>false</AvoidsNodes>
+          </Connection>
+          <Connection Source="FB1.INITO" Destination="Plant.INIT" dx1="418" />
+        </EventConnections>
+        <DataConnections>
+          <Connection Source="Controller.FWD" Destination="Plant.Extend" />
+          <Connection Source="Controller.RETR" Destination="Plant.Retract" />
+          <Connection Source="Plant.End" Destination="Controller.END" dx1="40.9585" dx2="30" dy="390" />
+          <Connection Source="Plant.Start" Destination="Controller.HOME" dx1="70.9585" dx2="60" dy="320">
+            <AvoidsNodes>false</AvoidsNodes>
+          </Connection>
+          <Connection Source="BT.VAL" Destination="Controller.START" dx1="153.3959">
+            <AvoidsNodes>false</AvoidsNodes>
+          </Connection>
+          <Connection Source="Controller.LED" Destination="BT.Light" dx1="84" dx2="120" dy="700">
+            <AvoidsNodes>false</AvoidsNodes>
+          </Connection>
+        </DataConnections>
+      </FBNetwork>
+    </Resource>
+    <FBNetwork />
+  </Device>
+  <Mapping From="APP1.Plant" To="DEV.RES0" />
+  <Mapping From="APP1.Controller" To="DEV.RES0" />
+  <Mapping From="APP1.Scan" To="DEV.RES0.Scan0" />
+  <Mapping From="APP1.BT" To="DEV.RES0" />
+  <Segment Name="SEGMENT1" Type="LocalBus" x="640" y="840" dx1="1200" />
+</System>

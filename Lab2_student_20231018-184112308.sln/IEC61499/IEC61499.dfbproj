@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <ProjectGuid>{AE2A6AC9-499B-43B1-AE2C-DB5E034A65CC}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Main</RootNamespace>
+    <AssemblyName>IEC61499</AssemblyName>
+    <NxtVersion>22.1.0.0</NxtVersion>
+    <Platform Condition=" '$(Platform)' == '' ">Windows</Platform>
+    <CreateHMI>false</CreateHMI>
+    <HMIProject>HMI</HMIProject>
+    <CATInstancesHaveIds>true</CATInstancesHaveIds>
+    <ProjectType>IEC61499</ProjectType>
+    <CreateHMICF>false</CreateHMICF>
+    <VerboseDeploy>False</VerboseDeploy>
+    <DeployOnlyChanges>True</DeployOnlyChanges>
+    <DeployConnectionTimeout>60</DeployConnectionTimeout>
+    <DeployAnswerTimeout>10</DeployAnswerTimeout>
+    <DeployPreConnectWait>2</DeployPreConnectWait>
+    <ArchiveLinkServiceTimeout>30</ArchiveLinkServiceTimeout>
+    <CheckGenericInstances>False</CheckGenericInstances>
+    <ConvertStringValues>False</ConvertStringValues>
+    <HardwareConfigurationMigrationVersion>1</HardwareConfigurationMigrationVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Default\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <IntermediateOutputPath>obj\Default\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Default\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <IntermediateOutputPath>obj\Default\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Windows' ">
+    <Version>1.0</Version>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'Windows' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <Import Project="$(SharpDevelopBinPath)\NxtControl.Build.61499.Targets" />
+  <ItemGroup>
+    <Compile Include="Button_LS\Button_LS.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="Button_LS\Button_LS_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>Button_LS.fbt</DependentUpon>
+      <HMI>..\HMI\Button_LS\Button_LS_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="DACylCtlBL.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="DACylCtlST.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <None Include="Button\Button.cfg">
+      <DependentUpon>Button.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="Button_LS\Button_LS.cfg">
+      <DependentUpon>Button_LS.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="Configuration\Certificates\Certificates.xml" />
+    <None Include="CylinderLS\CylinderLS.cfg">
+      <DependentUpon>CylinderLS.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="CylinderSA\CylinderSA.cfg">
+      <DependentUpon>CylinderSA.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="Cylinder\Cylinder.cfg">
+      <DependentUpon>Cylinder.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="IEC61499.iecproj" />
+    <None Include="Project.doc.xml" />
+    <None Include="Sensor\Sensor.cfg">
+      <DependentUpon>Sensor.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="Slider\Slider.cfg">
+      <DependentUpon>Slider.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <None Include="SnapshotCompiles\{01E063E6-B8F5-40E9-B8A6-1CEDB006EEC2}\Default\IEC61499.snapshot" />
+    <None Include="SnapshotCompiles\{C6142C4D-FD1C-4587-8344-B416303603E5}\Default\IEC61499.snapshot" />
+    <None Include="System\7b384acd-c823-42b0-8611-8a5f2d348303.hcf">
+      <DependentUpon>System.sys</DependentUpon>
+      <IEC61499Type>System</IEC61499Type>
+    </None>
+    <None Include="System\snapshot.xml">
+      <DependentUpon>System.sys</DependentUpon>
+    </None>
+    <None Include="System\System.cfg">
+      <DependentUpon>System.sys</DependentUpon>
+      <IEC61499Type>System</IEC61499Type>
+    </None>
+    <None Include="System\System.Device.Properties.xml">
+      <DependentUpon>System.sys</DependentUpon>
+    </None>
+    <None Include="System\System.opcuaclient.xml">
+      <DependentUpon>System.sys</DependentUpon>
+    </None>
+    <None Include="System\System.Topology.Binding.xml">
+      <DependentUpon>System.sys</DependentUpon>
+    </None>
+    <None Include="Valve\Valve.cfg">
+      <DependentUpon>Valve.fbt</DependentUpon>
+      <IEC61499Type>CAT</IEC61499Type>
+    </None>
+    <Compile Include="Button\Button.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="Button\Button_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <DependentUpon>Button.fbt</DependentUpon>
+      <HMI>..\HMI\Button\Button_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="ChangeDetect.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="ConvertToForce.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="CylinderLS\CylinderLS.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="CylinderLS\CylinderLS_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>CylinderLS.fbt</DependentUpon>
+      <HMI>..\HMI\CylinderLS\CylinderLS_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="CylinderSA\CylinderSA.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="CylinderSA\CylinderSA_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>CylinderSA.fbt</DependentUpon>
+      <HMI>..\HMI\CylinderSA\CylinderSA_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="Cylinder\Cylinder.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="Cylinder\Cylinder_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <DependentUpon>Cylinder.fbt</DependentUpon>
+      <HMI>..\HMI\Cylinder\Cylinder_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="InRange.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="integEC.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="MoveValve.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="PULSE.fbt">
+      <IEC61499Type>Composite</IEC61499Type>
+    </Compile>
+    <Compile Include="Sensor\Sensor.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="Sensor\Sensor_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>Sensor.fbt</DependentUpon>
+      <HMI>..\HMI\Sensor\Sensor_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="Slider\Slider.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="Slider\Slider_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <Usage>Private</Usage>
+      <DependentUpon>Slider.fbt</DependentUpon>
+      <HMI>..\HMI\Slider\Slider_sDefault.cnv.cs</HMI>
+    </Compile>
+    <Compile Include="System\System.sys">
+      <IEC61499Type>System</IEC61499Type>
+    </Compile>
+    <Compile Include="ValveControl.fbt">
+      <IEC61499Type>Basic</IEC61499Type>
+    </Compile>
+    <Compile Include="Valve\Valve.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+    </Compile>
+    <Compile Include="Valve\Valve_HMI.fbt">
+      <IEC61499Type>CAT</IEC61499Type>
+      <DependentUpon>Valve.fbt</DependentUpon>
+      <HMI>..\HMI\Valve\Valve_sDefault.cnv.cs</HMI>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration" />
+    <Folder Include="Configuration\Certificates" />
+    <Folder Include="License" />
+    <Folder Include="Log" />
+    <Folder Include="SnapshotCompiles" />
+    <Folder Include="SnapshotCompiles\{01E063E6-B8F5-40E9-B8A6-1CEDB006EEC2}" />
+    <Folder Include="SnapshotCompiles\{01E063E6-B8F5-40E9-B8A6-1CEDB006EEC2}\Default" />
+    <Folder Include="SnapshotCompiles\{C6142C4D-FD1C-4587-8344-B416303603E5}" />
+    <Folder Include="SnapshotCompiles\{C6142C4D-FD1C-4587-8344-B416303603E5}\Default" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Button\Button_CAT.opcua.xml">
+      <DependentUpon>Button.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="Button\Button_HMI.opcua.xml">
+      <DependentUpon>Button.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="Button_LS\Button_LS_CAT.offline.xml">
+      <DependentUpon>Button_LS.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="Button_LS\Button_LS_CAT.opcua.xml">
+      <DependentUpon>Button_LS.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="Button_LS\Button_LS_HMI.offline.xml">
+      <DependentUpon>Button_LS.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="Button_LS\Button_LS_HMI.opcua.xml">
+      <DependentUpon>Button_LS.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="CylinderLS\CylinderLS_CAT.opcua.xml">
+      <DependentUpon>CylinderLS.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="CylinderSA\CylinderSA_CAT.offline.xml">
+      <DependentUpon>CylinderSA.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="CylinderSA\CylinderSA_CAT.opcua.xml">
+      <DependentUpon>CylinderSA.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="Cylinder\Cylinder_CAT.offline.xml">
+      <DependentUpon>Cylinder.fbt</DependentUpon>
+      <Plugin>OfflineParametrizationEditor</Plugin>
+      <IEC61499Type>CAT_OFFLINE</IEC61499Type>
+    </Content>
+    <Content Include="Cylinder\Cylinder_CAT.opcua.xml">
+      <DependentUpon>Cylinder.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="System\System.opcua.xml">
+      <DependentUpon>System.sys</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+    <Content Include="Valve\Valve_CAT.opcua.xml">
+      <DependentUpon>Valve.fbt</DependentUpon>
+      <Plugin>OPCUAConfigurator</Plugin>
+      <IEC61499Type>CAT_OPCUA</IEC61499Type>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="IEC61131.Standard">
+      <Version>22.1.0.3</Version>
+    </Reference>
+    <Reference Include="nxtControl.Standard">
+      <Version>22.0.0.6</Version>
+    </Reference>
+    <Reference Include="Runtime.Base">
+      <Version>22.1.0.17</Version>
+    </Reference>
+    <Reference Include="SE.DPAC">
+      <Version>22.1.0.24</Version>
+    </Reference>
+    <Reference Include="SE.Standard">
+      <Version>22.1.0.9</Version>
+    </Reference>
+    <Reference Include="Standard.HMIExtensions">
+      <Version>22.1.0.5</Version>
+    </Reference>
+  </ItemGroup>
+</Project>

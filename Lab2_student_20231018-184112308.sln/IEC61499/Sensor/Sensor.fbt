@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FBType SYSTEM "../LibraryElement.dtd">
+<FBType Name="Sensor" Comment="Composite Function Block Type" Namespace="Main">
+  <Attribute Name="Configuration.FB.IDCounter" Value="4" />
+  <Identification Standard="61499-2" />
+  <VersionInfo Organization="nxtControl GmbH" Version="0.0" Author="Andrei" Date="5/26/2016" Remarks="template" />
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="REQ" Comment="Normal Execution Request">
+        <With Var="Position" />
+        <With Var="Range" />
+        <With Var="SensorPosition" />
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="CHG" Comment="Initialization Confirm">
+        <With Var="Result" />
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="Position" Type="REAL" Comment="Input event qualifier" />
+      <VarDeclaration Name="Range" Type="REAL" ArraySize="2" />
+      <VarDeclaration Name="SensorPosition" Type="REAL" />
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="Result" Type="BOOL" Comment="Output event qualifier" />
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB ID="1" Name="FB1" Type="E_RESTART" x="100" y="140" Namespace="IEC61499.Standard" />
+    <FB ID="2" Name="FB2" Type="InRange" x="820" y="600" Namespace="Main" />
+    <FB ID="3" Name="IThis" Type="Sensor_HMI" x="1960" y="600" Namespace="Main">
+      <Parameter Name="QI" Value="TRUE" />
+    </FB>
+    <Input Name="REQ">
+      <Position>
+        <X>25</X>
+        <Y>167.963547</Y>
+      </Position>
+      <IsType>Event</IsType>
+    </Input>
+    <Input Name="Position">
+      <Position>
+        <X>25</X>
+        <Y>217.963547</Y>
+      </Position>
+      <IsType>Data</IsType>
+    </Input>
+    <Input Name="Range">
+      <Position>
+        <X>25</X>
+        <Y>247.963531</Y>
+      </Position>
+      <IsType>Data</IsType>
+    </Input>
+    <Input Name="SensorPosition">
+      <Position>
+        <X>25</X>
+        <Y>232.963547</Y>
+      </Position>
+      <IsType>Data</IsType>
+    </Input>
+    <Output Name="CHG">
+      <Position>
+        <X>420</X>
+        <Y>277.963562</Y>
+      </Position>
+      <IsType>Event</IsType>
+    </Output>
+    <Output Name="Result">
+      <Position>
+        <X>420</X>
+        <Y>297.963531</Y>
+      </Position>
+      <IsType>Data</IsType>
+    </Output>
+    <EventConnections>
+      <Connection Source="REQ" Destination="FB2.REQ" dx1="48.95837" />
+      <Connection Source="FB1.COLD" Destination="IThis.INIT" dx1="1408.875">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB1.WARM" Destination="IThis.INIT" dx1="1408.875">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="FB2.CHG" Destination="IThis.IND" />
+      <Connection Source="IThis.INITO" Destination="FB2.INIT" dx1="40" dx2="30" dy="-108" />
+      <Connection Source="FB2.CHG" Destination="CHG" dx1="357.5209">
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+      <Connection Source="REQ" Destination="IThis.IND">
+        <Points>
+          <Points>
+            <X>90.26041</X>
+            <Y>175.000015</Y>
+          </Points>
+          <Points>
+            <X>150</X>
+            <Y>175.000015</Y>
+          </Points>
+          <Points>
+            <X>150</X>
+            <Y>110</Y>
+          </Points>
+          <Points>
+            <X>345</X>
+            <Y>110</Y>
+          </Points>
+          <Points>
+            <X>345</X>
+            <Y>174.5</Y>
+          </Points>
+          <Points>
+            <X>485</X>
+            <Y>174.5</Y>
+          </Points>
+        </Points>
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+    </EventConnections>
+    <DataConnections>
+      <Connection Source="Position" Destination="FB2.pos" dx1="40" />
+      <Connection Source="FB2.result" Destination="IThis.SensorRear" dx1="47.52087" />
+      <Connection Source="FB2.result" Destination="Result" dx1="47.10425" />
+      <Connection Source="Range" Destination="FB2.Range" dx1="41.04169" />
+      <Connection Source="SensorPosition" Destination="FB2.SensorPos" dx1="44.64581" />
+      <Connection Source="SensorPosition" Destination="IThis.SensorPosition">
+        <Points>
+          <Points>
+            <X>172.6771</X>
+            <Y>240.000015</Y>
+          </Points>
+          <Points>
+            <X>182.6771</X>
+            <Y>240.000015</Y>
+          </Points>
+          <Points>
+            <X>182.6771</X>
+            <Y>285</Y>
+          </Points>
+          <Points>
+            <X>370</X>
+            <Y>285</Y>
+          </Points>
+          <Points>
+            <X>370</X>
+            <Y>254.5</Y>
+          </Points>
+          <Points>
+            <X>485</X>
+            <Y>254.5</Y>
+          </Points>
+        </Points>
+        <AvoidsNodes>false</AvoidsNodes>
+      </Connection>
+    </DataConnections>
+  </FBNetwork>
+</FBType>
