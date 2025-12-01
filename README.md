@@ -30,4 +30,4 @@ You extend the state machine by adding timer-based behavior, integrating timing 
 ## 🖥️ HMI Screenshot
 
 ```md
-![HMI Screenshot](images/system.png)
+![HMI Screenshot](images/System.png)
