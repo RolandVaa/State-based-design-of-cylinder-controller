@@ -20,14 +20,14 @@ The work includes analyzing an existing state machine, extending it with improve
 ## 📝 Lab Tasks
 
 ### **Task 1 — Study and Enhance the Existing State-Based Design**
-You examine the current PLC state machine, understand its transitions and Boolean conditions, and then improve or modify its logic using IEC 61499 Function Blocks and Structured Text.
+Examining the current PLC state machine, understanding its transitions and Boolean conditions, and then improving or modifying its logic using IEC 61499 Function Blocks and Structured Text.
 
 ### **Task 2 — Update the Application to Use a Timer**
-You extend the state machine by adding timer-based behavior, integrating timing mechanisms into the transition logic to control state changes.
+Extending the state machine by adding timer-based behaviour, integrating timing mechanisms into the transition logic to control state changes.
 
 ---
 
 ## 🖥️ HMI Screenshot
 
 ```md
-![HMI Screenshot](images/System.png)
+![HMI Screenshot](system.png)
